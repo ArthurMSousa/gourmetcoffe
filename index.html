@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gourmet Coffee</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Gourmet Coffee</h1>
+        <div id="login">
+            <h2>Login</h2>
+            <form action="login.php" method="POST">
+                <input type="text" name="username" placeholder="Usuário" required>
+                <input type="password" name="password" placeholder="Senha" required>
+                <button type="submit">Entrar</button>
+            </form>
+        </div>
+        
+        <div id="register">
+            <h2>Cadastro</h2>
+            <form action="register.php" method="POST">
+                <input type="text" name="username" placeholder="Usuário" required>
+                <input type="password" name="password" placeholder="Senha" required>
+                <input type="email" name="email" placeholder="E-mail" required>
+                <button type="submit">Cadastrar</button>
+            </form>
+        </div>
+        
+        <div id="order">
+            <h2>Faça seu Pedido</h2>
+            <form action="orders.php" method="POST">
+                <label for="product">Selecione o Café:</label>
+                <select name="product" id="product" required>
+                    <option value="Capuccino">Capuccino - R$7,50</option>
+                    <option value="Expresso">Café Expresso - R$8,50</option>
+                    <option value="Com Leite">Café com Leite - R$9,50</option>
+                </select>
+                <input type="text" name="address" placeholder="Endereço de entrega" required>
+                <label>Forma de Pagamento:</label>
+                <div>
+                    <input type="radio" name="payment" value="Dinheiro" id="dinheiro" required>
+                    <label for="dinheiro">Dinheiro</label>
+                    <input type="radio" name="payment" value="Cartão" id="cartao">
+                    <label for="cartao">Cartão</label>
+                </div>
+                <div id="troco" style="display: none;">
+                    <input type="text" name="troco" placeholder="Precisa de troco?">
+                </div>
+                <p>No momento permitimos apenas o pagamento físico, em breve teremos mais formas de pagamento direto pelo APP.</p>
+                <button type="submit">Finalizar Pedido</button>
+            </form>
+        </div>
+
+        <div id="success" style="display: none;">
+            <h3>Recebemos seu pedido!</h3>
+            <p>Obrigado por comprar na Gourmet Coffee. Seu pedido será entregue em breve!</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
